@@ -8,9 +8,13 @@ public class Conexion {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+	}
+	
+	public String conecta(){
 		// TODO Auto-generated method stub
 
 		Connection conn = null;
+		String resultado = null;
 
         try
         {
@@ -19,15 +23,15 @@ public class Conexion {
             String url = "jdbc:mysql://palo.homelinux.org/pruebas";
             Class.forName ("com.mysql.jdbc.Driver").newInstance ();
             conn = DriverManager.getConnection (url, userName, password);
-            System.out.println ("Database connection established");
+            resultado = "Database connection established \n";
             Statement select = conn.createStatement();
            
             ResultSet result = select.executeQuery("SELECT * FROM usuarios");
-            System.out.println("Tengo el resultado");
+            resultado += "Tengo el resultado: \n\n";
             
             while (result.next()){
-            	System.out.print("Usu: " + result.getString("nombre"));
-            	System.out.println("    Pass:  " + result.getString("nick"));
+            	resultado += "Usu: " + result.getString("nombre");
+            	resultado += "    Pass:  " + result.getString("nick") + "\n";
             }
         }
         catch (Exception e)
@@ -42,12 +46,14 @@ public class Conexion {
                 try
                 {
                     conn.close ();
-                    System.out.println ("Database connection terminated");
+                    resultado += "Database connection terminated\n";
                     ProbandoSubVersion.Yuju();
                 }
                 catch (Exception e) { /* ignore close errors */ }
             }
         }
-	}
+        
+        return resultado;
+	} 
 
 }
