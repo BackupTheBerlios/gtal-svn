@@ -14,6 +14,10 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.FlowLayout;
+import java.awt.CardLayout;
 
 public class VentanaConsulta extends JFrame {
 
@@ -43,8 +47,6 @@ public class VentanaConsulta extends JFrame {
 
 	private JButton Consulta = null;
 
-	private JPanel jPanel = null;
-
 	private JButton borrar = null;
 
 	/**
@@ -65,7 +67,7 @@ public class VentanaConsulta extends JFrame {
 		this.setJMenuBar(getJJMenuBar());
 		this.setSize(496, 286);
 		this.setContentPane(getJContentPane());
-		this.setTitle("Application");
+		this.setTitle("Ventana de Consulta");
 	}
 
 	/**
@@ -77,10 +79,9 @@ public class VentanaConsulta extends JFrame {
 		if (jContentPane == null) {
 			jContentPane = new JPanel();
 			jContentPane.setLayout(new BorderLayout());
-			jContentPane.add(getJTextArea(), java.awt.BorderLayout.CENTER);
 			jContentPane.add(getJButton(), java.awt.BorderLayout.NORTH);
-			jContentPane.add(getJPanel(), java.awt.BorderLayout.SOUTH);
-			jContentPane.add(getJButton2(), java.awt.BorderLayout.WEST);
+			jContentPane.add(getJButton2(), java.awt.BorderLayout.SOUTH);
+			jContentPane.add(getJTextArea(), java.awt.BorderLayout.CENTER);
 		}
 		return jContentPane;
 	}
@@ -250,6 +251,7 @@ public class VentanaConsulta extends JFrame {
 		if (resultado == null) {
 			resultado = new JTextArea();
 			resultado.setText("");
+			resultado.setName("resultado");
 		}
 		return resultado;
 	}
@@ -263,6 +265,7 @@ public class VentanaConsulta extends JFrame {
 		if (Consulta == null) {
 			Consulta = new JButton();
 			Consulta.setText("Consultar BBDD");
+			Consulta.setName("Consulta");
 			Consulta.setToolTipText("Haz click aqui para consultar la Base de Datos");
 			Consulta.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -275,18 +278,6 @@ public class VentanaConsulta extends JFrame {
 	}
 
 	/**
-	 * This method initializes jPanel	
-	 * 	
-	 * @return javax.swing.JPanel	
-	 */
-	private JPanel getJPanel() {
-		if (jPanel == null) {
-			jPanel = new JPanel();
-		}
-		return jPanel;
-	}
-
-	/**
 	 * This method initializes jButton	
 	 * 	
 	 * @return javax.swing.JButton	
@@ -295,6 +286,7 @@ public class VentanaConsulta extends JFrame {
 		if (borrar == null) {
 			borrar = new JButton();
 			borrar.setText("Borrar");
+			borrar.setName("borrar");
 			borrar.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					resultado.setText("");
