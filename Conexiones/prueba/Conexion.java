@@ -43,6 +43,7 @@ public class Conexion {
                 {
                     conn.close ();
                     System.out.println ("Database connection terminated");
+                    ProbandoSubVersion.Yuju();
                 }
                 catch (Exception e) { /* ignore close errors */ }
             }

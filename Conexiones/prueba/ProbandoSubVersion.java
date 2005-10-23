@@ -12,6 +12,7 @@ public class ProbandoSubVersion {
 	
 	public static void Yuju(){
 		System.out.println("YUJU YUJU YUJU!!!");
+		System.out.println("Ves como ya funciona?");
 	}
 
 }
