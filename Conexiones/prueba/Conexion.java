@@ -26,12 +26,12 @@ public class Conexion {
             resultado = "Database connection established \n";
             Statement select = conn.createStatement();
            
-            ResultSet result = select.executeQuery("SELECT * FROM usuarios");
+            ResultSet result = select.executeQuery("SELECT producto, nombre, FROM Producto natural join Marca");
             resultado += "Tengo el resultado: \n\n";
             
             while (result.next()){
-            	resultado += "Usu: " + result.getString("nombre");
-            	resultado += "    Pass:  " + result.getString("nick") + "\n";
+            	resultado += "Usu: " + result.getString("producto");
+            	resultado += "    Pass:  " + result.getString("nombre") + "\n";
             }
         }
         catch (Exception e)
