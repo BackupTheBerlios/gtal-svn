@@ -20,7 +20,7 @@ public class Conexion {
         {
             String userName = "usuprueba";
             String password = "pruebapass";
-            String url = "jdbc:mysql://kn0t.sytes.net/pruebas";
+            String url = "jdbc:mysql://palo.homelinux.org/pruebas";
             Class.forName ("com.mysql.jdbc.Driver").newInstance ();
             conn = DriverManager.getConnection (url, userName, password);
             resultado = "Database connection established \n";
