@@ -11,13 +11,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.KeyStroke;
 import javax.swing.JTabbedPane;
-import javax.swing.JDesktopPane;
+//import javax.swing.JDesktopPane;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+//import javax.swing.JTable;
+//import javax.swing.table.DefaultTableModel;
 
 public class GtalTienda extends JFrame {
 
