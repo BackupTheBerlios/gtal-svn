@@ -265,12 +265,12 @@ public class GtalTienda extends JFrame {
 		if (sVentajSplitPane == null) {
 			sVentajSplitPane = new JSplitPane();
 			sVentajSplitPane.setDividerSize(10);
-			sVentajSplitPane.setPreferredSize(new java.awt.Dimension(1292,80));
+			sVentajSplitPane.setPreferredSize(new java.awt.Dimension(0,80));
 			sVentajSplitPane.setLeftComponent(getLeftjSplitPane());
 			sVentajSplitPane.setRightComponent(getRightjSplitPane());
 			int j = this.getBounds().width;
 			j= j/2;
-			sVentajSplitPane.setDividerLocation(646);
+			sVentajSplitPane.setDividerLocation(j);
 		}
 		return sVentajSplitPane;
 	}
@@ -284,7 +284,7 @@ public class GtalTienda extends JFrame {
 		if (leftjSplitPane == null) {
 			leftjSplitPane = new JSplitPane();
 			//int i=sVentajSplitPane.getY();
-			leftjSplitPane.setPreferredSize(new java.awt.Dimension(646,80));
+			leftjSplitPane.setPreferredSize(new java.awt.Dimension(0,80));
 			leftjSplitPane.setDividerLocation(45);
 			leftjSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 			leftjSplitPane.setDividerSize(3);
@@ -325,8 +325,8 @@ public class GtalTienda extends JFrame {
 			topLjSplitPane.setRightComponent(getRightTLjTextField());
 			int i = topLjSplitPane.getWidth();		
 			i=i/2;
-			topLjSplitPane.setPreferredSize(new java.awt.Dimension(646,35));
-			topLjSplitPane.setDividerLocation(323);
+			topLjSplitPane.setPreferredSize(new java.awt.Dimension(0,35));
+			topLjSplitPane.setDividerLocation(i);
 		
 		}
 		return topLjSplitPane;
@@ -404,7 +404,7 @@ public class GtalTienda extends JFrame {
 			leftTLjTextField.setEditable(false);
 			int i = topLjSplitPane.getWidth();
 			i = i/2;
-			leftTLjTextField.setPreferredSize(new java.awt.Dimension(318,35));
+			leftTLjTextField.setPreferredSize(new java.awt.Dimension(i,35));
 			leftTLjTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		}
 		return leftTLjTextField;
@@ -425,7 +425,7 @@ public class GtalTienda extends JFrame {
 			rightTLjTextField.setEditable(false);
 			int i = topLjSplitPane.getWidth();
 			i = i/2;
-			rightTLjTextField.setPreferredSize(new java.awt.Dimension(318,35));
+			rightTLjTextField.setPreferredSize(new java.awt.Dimension(i,35));
 			rightTLjTextField.setFont(new java.awt.Font("Dialog", java.awt.Font.BOLD, 16));
 		}
 		return rightTLjTextField;
@@ -477,7 +477,8 @@ public class GtalTienda extends JFrame {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		GtalTienda ventana = new GtalTienda();
+		ventana.show();
 	}
 
 	/**
@@ -495,7 +496,7 @@ public class GtalTienda extends JFrame {
 	 */
 	private void initialize() {
 		this.setSize(809, 536);
-		this.setPreferredSize(new java.awt.Dimension(802,519));
+		//this.setPreferredSize(new java.awt.Dimension(802,519));
 		this.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(getJTabbedPane());
 		this.setJMenuBar(getJJMenuBar());
