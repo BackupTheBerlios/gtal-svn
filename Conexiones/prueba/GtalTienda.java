@@ -61,7 +61,8 @@ public class GtalTienda extends JFrame {
 	private JSplitPane jSplitPane = null;
 	private JSplitPane jSplitPane1 = null;
 	private JPanel jPanel6 = null;
-	private JTextPane jTextPane = null;
+	private JSplitPane jSplitPane2 = null;
+	private JPanel jPanel5 = null;
 	/**
 	 * This method initializes jJMenuBar	
 	 * 	
@@ -142,7 +143,6 @@ public class GtalTienda extends JFrame {
 			jPanel.add(getEleccionjSplitPane(), java.awt.BorderLayout.SOUTH);
 			jPanel.add(getSVentajSplitPane(), java.awt.BorderLayout.NORTH);
 			jPanel.add(getJPanel3(), java.awt.BorderLayout.WEST);
-			jPanel.add(getJTextPane(), java.awt.BorderLayout.CENTER);
 		}
 		return jPanel;
 	}
@@ -183,7 +183,8 @@ public class GtalTienda extends JFrame {
 		if (eleccionjSplitPane == null) {
 			eleccionjSplitPane = new JSplitPane();
 			eleccionjSplitPane.setDividerSize(5);
-			eleccionjSplitPane.setPreferredSize(new java.awt.Dimension(0,30));
+			int j2 = this.getBounds().width;
+			eleccionjSplitPane.setPreferredSize(new java.awt.Dimension(j2,30));
 			eleccionjSplitPane.setOneTouchExpandable(false);
 			eleccionjSplitPane.setRightComponent(getJButton1());
 			eleccionjSplitPane.setLeftComponent(getJButton());
@@ -203,7 +204,9 @@ public class GtalTienda extends JFrame {
 		if (jButton1 == null) {
 			jButton1 = new JButton();
 			jButton1.setText("Cancelar");
-			jButton1.setPreferredSize(new java.awt.Dimension(646,25));
+			int j = this.getBounds().width;
+			j= j/2-5;
+			jButton1.setPreferredSize(new java.awt.Dimension(j,25));
 			jButton1.setToolTipText("La venta aun no se puede formalizar");
 		}
 		return jButton1;
@@ -219,7 +222,9 @@ public class GtalTienda extends JFrame {
 			jButton = new JButton();
 			jButton.setName("");
 			jButton.setToolTipText("La venta ya esta lista para formalizar");
-			jButton.setPreferredSize(new java.awt.Dimension(646,25));
+			int j = this.getBounds().width;
+			j= j/2;
+			jButton.setPreferredSize(new java.awt.Dimension(j,25));
 			jButton.setText("Venta");
 		}
 		return jButton;
@@ -284,7 +289,8 @@ public class GtalTienda extends JFrame {
 		if (sVentajSplitPane == null) {
 			sVentajSplitPane = new JSplitPane();
 			sVentajSplitPane.setDividerSize(10);
-			sVentajSplitPane.setPreferredSize(new java.awt.Dimension(0,80));
+			int j2 = this.getBounds().width;
+			sVentajSplitPane.setPreferredSize(new java.awt.Dimension(j2,80));
 			sVentajSplitPane.setLeftComponent(getLeftjSplitPane());
 			sVentajSplitPane.setRightComponent(getRightjSplitPane());
 			int j = this.getBounds().width;
@@ -303,7 +309,9 @@ public class GtalTienda extends JFrame {
 		if (leftjSplitPane == null) {
 			leftjSplitPane = new JSplitPane();
 			//int i=sVentajSplitPane.getY();
-			leftjSplitPane.setPreferredSize(new java.awt.Dimension(0,80));
+			int j = this.getBounds().width;
+			j= j/2;
+			leftjSplitPane.setPreferredSize(new java.awt.Dimension(j,80));
 			leftjSplitPane.setDividerLocation(45);
 			leftjSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 			leftjSplitPane.setDividerSize(3);
@@ -322,7 +330,9 @@ public class GtalTienda extends JFrame {
 		if (rightjSplitPane == null) {
 			rightjSplitPane = new JSplitPane();
 			rightjSplitPane.setDividerLocation(45);
-			rightjSplitPane.setPreferredSize(new java.awt.Dimension(0,80));
+			int i = this.getBounds().width;
+			i = (i/2)-10;
+			rightjSplitPane.setPreferredSize(new java.awt.Dimension(i,80));
 			rightjSplitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 			rightjSplitPane.setTopComponent(getTopRjSplitPane());
 			rightjSplitPane.setDividerSize(3);
@@ -342,10 +352,14 @@ public class GtalTienda extends JFrame {
 			topLjSplitPane.setDividerSize(10);
 			topLjSplitPane.setLeftComponent(getLeftTLjTextField());
 			topLjSplitPane.setRightComponent(getRightTLjTextField());
+			int i2 = this.getBounds().width;
+			i2 = i2/2;
+			topLjSplitPane.setPreferredSize(new java.awt.Dimension(i2,35));
+			int i3 = this.getBounds().width;
+			i3 = i3/4-2;
 			int i = topLjSplitPane.getWidth();		
-			i=i/2;
-			topLjSplitPane.setPreferredSize(new java.awt.Dimension(0,35));
-			topLjSplitPane.setDividerLocation(i);
+			i=i/2;		
+			topLjSplitPane.setDividerLocation(i3);
 		
 		}
 		return topLjSplitPane;
@@ -361,8 +375,12 @@ public class GtalTienda extends JFrame {
 			topRjSplitPane = new JSplitPane();
 			int i = topRjSplitPane.getWidth();		
 			i=i/2;
-			topRjSplitPane.setDividerLocation(i);
-			topRjSplitPane.setPreferredSize(new java.awt.Dimension(0,35));
+			int i2 = this.getBounds().width;
+			i2= i2/4-15;
+			topRjSplitPane.setDividerLocation(i2);
+			int i3 = this.getBounds().width;
+			i3= i3/2-10;
+			topRjSplitPane.setPreferredSize(new java.awt.Dimension(i3,35));
 			topRjSplitPane.setLeftComponent(getLeftTRjTextField());
 			topRjSplitPane.setDividerSize(10);
 			topRjSplitPane.setRightComponent(getRightTRjTextField());
@@ -380,10 +398,14 @@ public class GtalTienda extends JFrame {
 			bottomLjSplitPane = new JSplitPane();
 			int i = bottomLjSplitPane.getWidth();		
 			i=i/2;
+			int i2 = this.getBounds().width;
+			i2= i2/4-2;
 			int j = leftjSplitPane.getHeight();
 			j=j/2;
-			bottomLjSplitPane.setDividerLocation(i);
-			bottomLjSplitPane.setPreferredSize(new java.awt.Dimension(0,39));
+			bottomLjSplitPane.setDividerLocation(i2);
+			int i3 = this.getBounds().width;
+			i3= i3/2;
+			bottomLjSplitPane.setPreferredSize(new java.awt.Dimension(i3,39));
 			bottomLjSplitPane.setLeftComponent(getNombreJTextArea());
 			bottomLjSplitPane.setDividerSize(10);
 			bottomLjSplitPane.setRightComponent(getCodProductJTextArea());
@@ -402,11 +424,15 @@ public class GtalTienda extends JFrame {
 			bottomRjSplitPane.setDividerSize(10);			
 			int i = bottomRjSplitPane.getWidth();		
 			i=i/2;
+			int i2 = this.getBounds().width;
+			i2= i2/4-15;
 			int j = rightjSplitPane.getHeight();
 			j=j/2;
-			bottomRjSplitPane.setDividerLocation(i);
+			bottomRjSplitPane.setDividerLocation(i2);
 			bottomRjSplitPane.setLeftComponent(getPreciojTextArea());
-			bottomRjSplitPane.setPreferredSize(new java.awt.Dimension(0,39));
+			int i3 = this.getBounds().width;
+			i3= i3/2-10;
+			bottomRjSplitPane.setPreferredSize(new java.awt.Dimension(i3,39));
 			bottomRjSplitPane.setRightComponent(getCantidadjTextArea());
 		}
 		return bottomRjSplitPane;
@@ -425,9 +451,9 @@ public class GtalTienda extends JFrame {
 			leftTLjTextField.setForeground(java.awt.Color.black);
 			leftTLjTextField.setBackground(java.awt.SystemColor.control);
 			leftTLjTextField.setEditable(false);
-			int i = topLjSplitPane.getWidth();
-			i = i/2;
-			leftTLjTextField.setPreferredSize(new java.awt.Dimension(0,35));
+			int i = this.getBounds().width;
+			i = i/4;
+			leftTLjTextField.setPreferredSize(new java.awt.Dimension(i,35));
 			leftTLjTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		}
 		return leftTLjTextField;
@@ -446,9 +472,9 @@ public class GtalTienda extends JFrame {
 			rightTLjTextField.setForeground(java.awt.Color.black);
 			rightTLjTextField.setText("Cod. Producto");
 			rightTLjTextField.setEditable(false);
-			int i = topLjSplitPane.getWidth();
-			i = i/2;
-			rightTLjTextField.setPreferredSize(new java.awt.Dimension(0,35));
+			int i = this.getBounds().width;
+			i = i/4-2;
+			rightTLjTextField.setPreferredSize(new java.awt.Dimension(i,35));
 			rightTLjTextField.setFont(new java.awt.Font("Dialog", java.awt.Font.BOLD, 18));
 		}
 		return rightTLjTextField;
@@ -467,9 +493,9 @@ public class GtalTienda extends JFrame {
 			leftTRjTextField.setText("Precio");
 			leftTRjTextField.setBackground(java.awt.SystemColor.control);
 			leftTRjTextField.setEditable(false);
-			int i = topRjSplitPane.getWidth();
-			i = i/2;
-			leftTRjTextField.setPreferredSize(new java.awt.Dimension(0,35));
+			int i = this.getBounds().width;
+			i = i/4-15;
+			leftTRjTextField.setPreferredSize(new java.awt.Dimension(i,35));
 			leftTRjTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		}
 		return leftTRjTextField;
@@ -487,9 +513,9 @@ public class GtalTienda extends JFrame {
 			rightTRjTextField.setFont(new java.awt.Font("Dialog", java.awt.Font.BOLD, 18));
 			rightTRjTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 			rightTRjTextField.setText("Cantidad");
-			int i = topRjSplitPane.getWidth();
-			i = i/2;
-			rightTRjTextField.setPreferredSize(new java.awt.Dimension(0,35));
+			int i = this.getBounds().width;
+			i = i/4-15;
+			rightTRjTextField.setPreferredSize(new java.awt.Dimension(i,35));
 			rightTRjTextField.setBackground(java.awt.SystemColor.control);
 		}
 		return rightTRjTextField;
@@ -657,7 +683,7 @@ public class GtalTienda extends JFrame {
 			jSplitPane1 = new JSplitPane();
 			jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 			jSplitPane1.setDividerSize(5);
-			jSplitPane1.setBottomComponent(getJButton5());
+			jSplitPane1.setBottomComponent(getJSplitPane2());
 			jSplitPane1.setTopComponent(getJButton6());
 		}
 		return jSplitPane1;
@@ -677,17 +703,31 @@ public class GtalTienda extends JFrame {
 	}
 
 	/**
-	 * This method initializes jTextPane	
+	 * This method initializes jSplitPane2	
 	 * 	
-	 * @return javax.swing.JTextPane	
+	 * @return javax.swing.JSplitPane	
 	 */
-	private JTextPane getJTextPane() {
-		if (jTextPane == null) {
-			jTextPane = new JTextPane();
-			jTextPane.setPreferredSize(new java.awt.Dimension(100,100));
-			jTextPane.setToolTipText("La tabla de ventas");
+	private JSplitPane getJSplitPane2() {
+		if (jSplitPane2 == null) {
+			jSplitPane2 = new JSplitPane();
+			jSplitPane2.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+			jSplitPane2.setTopComponent(getJButton5());
+				jSplitPane2.setBottomComponent(getJPanel5());
+		jSplitPane2.setDividerSize(6);
 		}
-		return jTextPane;
+		return jSplitPane2;
+	}
+
+	/**
+	 * This method initializes jPanel5	
+	 * 	
+	 * @return javax.swing.JPanel	
+	 */
+	private JPanel getJPanel5() {
+		if (jPanel5 == null) {
+			jPanel5 = new JPanel();
+		}
+		return jPanel5;
 	}
 
 	/**
