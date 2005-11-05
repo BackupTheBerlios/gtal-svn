@@ -156,6 +156,7 @@ public class GtalTienda extends JFrame {
 		if (jPanel1 == null) {
 			jPanel1 = new JPanel();
 			jPanel1.setLayout(new BorderLayout());
+			jPanel1.setPreferredSize(new java.awt.Dimension(0,30));
 			jPanel1.add(getEleccionDjSplitPane(), java.awt.BorderLayout.SOUTH);
 		}
 		return jPanel1;
@@ -239,12 +240,13 @@ public class GtalTienda extends JFrame {
 		if (eleccionDjSplitPane == null) {
 			eleccionDjSplitPane = new JSplitPane();
 			eleccionDjSplitPane.setDividerSize(5);
-			eleccionDjSplitPane.setPreferredSize(new java.awt.Dimension(1292,30));
+			int i = this.getBounds().width;
+			eleccionDjSplitPane.setPreferredSize(new java.awt.Dimension(i,30));
 			eleccionDjSplitPane.setLeftComponent(getJButton2());
 			eleccionDjSplitPane.setRightComponent(getJButton3());
 			int j = this.getBounds().width;
 			j= j/2;
-			eleccionDjSplitPane.setDividerLocation(646);
+			eleccionDjSplitPane.setDividerLocation(j);
 			
 		}
 		return eleccionDjSplitPane;
@@ -258,7 +260,9 @@ public class GtalTienda extends JFrame {
 	private JButton getJButton2() {
 		if (jButton2 == null) {
 			jButton2 = new JButton();
-			jButton2.setPreferredSize(new java.awt.Dimension(646,30));
+			int j = this.getBounds().width;
+			j=j/2;
+			jButton2.setPreferredSize(new java.awt.Dimension(j,30));
 			jButton2.setToolTipText("La devolución se hara efectiva ahora");
 			jButton2.setText("Devolución");
 		}
@@ -273,7 +277,9 @@ public class GtalTienda extends JFrame {
 	private JButton getJButton3() {
 		if (jButton3 == null) {
 			jButton3 = new JButton();
-			jButton3.setPreferredSize(new java.awt.Dimension(641,30));
+			int j = this.getBounds().width;
+			j=j/2;
+			jButton3.setPreferredSize(new java.awt.Dimension(j,30));
 			jButton3.setToolTipText("Para rechazar la devolución");
 			jButton3.setText("Cancelar");
 		}
