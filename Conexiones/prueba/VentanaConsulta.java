@@ -18,6 +18,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.FlowLayout;
 import java.awt.CardLayout;
+import java.awt.Toolkit;
+
 
 public class VentanaConsulta extends JFrame {
 
@@ -65,7 +67,7 @@ public class VentanaConsulta extends JFrame {
 	private void initialize() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setJMenuBar(getJJMenuBar());
-		this.setSize(496, 286);
+		this.setSize(java.awt.Toolkit.getDefaultToolkit().getScreenSize().width, java.awt.Toolkit.getDefaultToolkit().getScreenSize().height);
 		this.setContentPane(getJContentPane());
 		this.setTitle("Ventana de Consulta");
 	}
